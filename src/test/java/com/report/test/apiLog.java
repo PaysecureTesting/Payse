@@ -39,7 +39,7 @@ public class apiLog extends baseClass{
 	
 	
   @Test
-  public void f() throws InterruptedException, TimeoutException {
+  public void verifyAPILog() throws InterruptedException, TimeoutException {
 		api.verifyUserIsOnApiReportPage(getDriver());
 		ts.selectDateRange(getDriver(),"This Week");
 		api.selectAPI("Check_Customer_TrustScore");

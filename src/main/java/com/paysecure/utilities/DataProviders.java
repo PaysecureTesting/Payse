@@ -38,4 +38,17 @@ public class DataProviders {
 		return data;
 	}
 	
+	@DataProvider(name = "cardNames")
+	public Object[][] getCardNames() {
+	    return new Object[][] {
+	        {"MOBILEMONEY"},
+	        {"INTERAC"},
+	        {"PIX"},
+	        {"50785078******7812"},
+	        {"PAYID"},
+	        {"40840840****4081"},
+	        {"VIRTUAL-ACCOUNT"},
+	    };
+	}
+	
 }

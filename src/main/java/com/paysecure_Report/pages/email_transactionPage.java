@@ -530,7 +530,7 @@ public class email_transactionPage {
 		        	
 		        	actionDriver.scrollToElement(showing);
 		        	
-		            List<WebElement> columns = row.findElements(By.xpath("//tbody[@id='filterTransStats']/tr[1]/td"));
+		            List<WebElement> columns = row.findElements(By.xpath("(//th[text()='Transaction ID'])[1]/ancestor::table//td[4]"));
 
 		            for (WebElement cell : columns) {
 		                String cellText = cell.getText().trim();

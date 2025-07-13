@@ -9,7 +9,7 @@
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="testClickFirstEmailOccurrence"/>
+          <include name="testTIDInHistoryCardSummarypage" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.report.test.transaction -->
     </classes>

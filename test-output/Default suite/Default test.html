@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 10 18:03:52 IST 2025</td>
+<td>Started on:</td><td>Sat Jul 12 12:16:52 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>662 seconds (662439 ms)</td>
+<tr><td>Total time:</td><td>243 seconds (243186 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,159 +76,103 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.report.test.transaction.testClickFirstEmailOccurrence()'><b>testClickFirstEmailOccurrence</b><br>Test class: com.report.test.transaction</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7779d3104431b956f8abd94cdce8f4ea, getElementText [id]]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.100, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62729}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62729/devtoo..., se:cdpVersion: 138.0.7204.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (7779d3104431b956f8abd94cdce8f4ea)] -&gt; xpath: (//th[text()=&apos;Transaction ID&apos;])[1]/ancestor::table//td[6]]] -&gt; xpath: //tbody[@id=&apos;filterTransStats&apos;]/tr[1]/td]
-Session ID: 7779d3104431b956f8abd94cdce8f4ea
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191)
-	at com.paysecure_Report.pages.email_transactionPage.clickOnSpecificEmail(email_transactionPage.java:533)
-	at com.report.test.transaction.testClickFirstEmailOccurrence(transaction.java:320)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:496)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$1(JdkHttpClient.java:383)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:574)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:455)
-	... 8 more
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
-	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
-	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
-	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
-	... 3 more
-Caused by: java.nio.channels.ClosedChannelException
-	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
-	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
-	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
-	... 9 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace414997530", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace414997530'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7779d3104431b956f8abd94cdce8f4ea, getElementText [id]]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.100, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62729}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62729/devtoo..., se:cdpVersion: 138.0.7204.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (7779d3104431b956f8abd94cdce8f4ea)] -&gt; xpath: (//th[text()=&apos;Transaction ID&apos;])[1]/ancestor::table//td[6]]] -&gt; xpath: //tbody[@id=&apos;filterTransStats&apos;]/tr[1]/td]
-Session ID: 7779d3104431b956f8abd94cdce8f4ea
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191)
-	at com.paysecure_Report.pages.email_transactionPage.clickOnSpecificEmail(email_transactionPage.java:533)
-	at com.report.test.transaction.testClickFirstEmailOccurrence(transaction.java:320)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.io.UncheckedIOException: java.net.ConnectException
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:496)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$1(JdkHttpClient.java:383)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:574)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:455)
-	... 8 more
-Caused by: java.net.ConnectException
-	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
-	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
-	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
-	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
-	... 3 more
-Caused by: java.nio.channels.ClosedChannelException
-	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
-	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
-	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
-	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
-	... 9 more
-</pre></div></td>
-<td>649</td>
-<td>com.report.test.transaction@7a48e6e2</td></tr>
+<td title='com.report.test.transaction.testTIDInActionCardSummarypage()'><b>testTIDInActionCardSummarypage</b><br>Test class: com.report.test.transaction<br>Parameters: VIRTUAL-ACCOUNT<br/>
+<a href="#Output-1215646341" onClick='toggleBox("Output-1215646341", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1215646341" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1215646341">
+Click on the Date range<br/>
+select date range :- Yesterday<br/>
+User click on Search Buttton<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>com.report.test.transaction@6d0b5baf</td></tr>
+<tr>
+<td title='com.report.test.transaction.testTIDInActionCardSummarypage()'><b>testTIDInActionCardSummarypage</b><br>Test class: com.report.test.transaction<br>Parameters: PIX<br/>
+<a href="#Output-66554485" onClick='toggleBox("Output-66554485", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-66554485" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-66554485">
+Click on the Date range<br/>
+select date range :- Yesterday<br/>
+User click on Search Buttton<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>com.report.test.transaction@6d0b5baf</td></tr>
+<tr>
+<td title='com.report.test.transaction.testTIDInActionCardSummarypage()'><b>testTIDInActionCardSummarypage</b><br>Test class: com.report.test.transaction<br>Parameters: 50785078******7812<br/>
+<a href="#Output-748950518" onClick='toggleBox("Output-748950518", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-748950518" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-748950518">
+Click on the Date range<br/>
+select date range :- Yesterday<br/>
+User click on Search Buttton<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>com.report.test.transaction@6d0b5baf</td></tr>
+<tr>
+<td title='com.report.test.transaction.testTIDInActionCardSummarypage()'><b>testTIDInActionCardSummarypage</b><br>Test class: com.report.test.transaction<br>Parameters: 40840840****4081<br/>
+<a href="#Output-187123764" onClick='toggleBox("Output-187123764", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-187123764" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-187123764">
+Click on the Date range<br/>
+select date range :- Yesterday<br/>
+User click on Search Buttton<br/>
+</div>
+</td>
+<td></td>
+<td>17</td>
+<td>com.report.test.transaction@6d0b5baf</td></tr>
+<tr>
+<td title='com.report.test.transaction.testTIDInActionCardSummarypage()'><b>testTIDInActionCardSummarypage</b><br>Test class: com.report.test.transaction<br>Parameters: PAYID<br/>
+<a href="#Output-1762088210" onClick='toggleBox("Output-1762088210", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1762088210" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1762088210">
+Click on the Date range<br/>
+select date range :- Yesterday<br/>
+User click on Search Buttton<br/>
+</div>
+</td>
+<td></td>
+<td>7</td>
+<td>com.report.test.transaction@6d0b5baf</td></tr>
+<tr>
+<td title='com.report.test.transaction.testTIDInActionCardSummarypage()'><b>testTIDInActionCardSummarypage</b><br>Test class: com.report.test.transaction<br>Parameters: MOBILEMONEY<br/>
+<a href="#Output-39686426" onClick='toggleBox("Output-39686426", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-39686426" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-39686426">
+Click on the Date range<br/>
+select date range :- Yesterday<br/>
+User click on Search Buttton<br/>
+</div>
+</td>
+<td></td>
+<td>24</td>
+<td>com.report.test.transaction@6d0b5baf</td></tr>
+<tr>
+<td title='com.report.test.transaction.testTIDInActionCardSummarypage()'><b>testTIDInActionCardSummarypage</b><br>Test class: com.report.test.transaction<br>Parameters: INTERAC<br/>
+<a href="#Output-1220813395" onClick='toggleBox("Output-1220813395", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1220813395" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1220813395">
+Click on the Date range<br/>
+select date range :- Yesterday<br/>
+User click on Search Buttton<br/>
+</div>
+</td>
+<td></td>
+<td>63</td>
+<td>com.report.test.transaction@6d0b5baf</td></tr>
 </table><p>
 </body>
 </html>
