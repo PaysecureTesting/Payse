@@ -6,10 +6,10 @@
       <class name="com.report.test.transaction">
         <methods>
           <include name="loadConfig"/>
+          <include name="testClickFirstEmailOccurrenceOf_Card"/>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="testTIDInHistoryCardSummarypage" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.report.test.transaction -->
     </classes>

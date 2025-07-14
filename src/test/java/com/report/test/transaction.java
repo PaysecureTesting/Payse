@@ -364,7 +364,7 @@ public class transaction extends baseClass {
 	
 	@Test (dataProvider ="cardNames", dataProviderClass = DataProviders.class)
 	public void testTIDInHistoryCardSummarypage(String targetCard) throws InterruptedException {
-		ts.selectDateRange(getDriver(),"Yesterday");
+		ts.selectDateRange(getDriver(),"Last 7 Days");
 		ts.clickOnSearchButton(getDriver());
 		
 		card.clickOnCard(getDriver(), targetCard);
