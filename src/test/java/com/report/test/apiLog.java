@@ -1,13 +1,16 @@
 package com.report.test;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeoutException;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.paysecure.base.baseClass;
 import com.paysecure.pages.loginPage;
+import com.paysecure.utilities.DataProviders;
 import com.paysecure_Report.pages.apiLog_page;
 import com.paysecure_Report.pages.bank_Transaction_Time;
 import com.paysecure_Report.pages.transactionPage;
@@ -31,7 +34,7 @@ public class apiLog extends baseClass{
 
 		api=new apiLog_page(getDriver());
 				
-
+		api.verifyUserIsOnApiReportPage(getDriver());
 	}
 	
 	
@@ -40,7 +43,7 @@ public class apiLog extends baseClass{
 	
   @Test
   public void verifyAPILog() throws InterruptedException, TimeoutException {
-		api.verifyUserIsOnApiReportPage(getDriver());
+	
 		ts.selectDateRange(getDriver(),"This Week");
 		api.selectAPI("Check_Customer_TrustScore");
 		api.selectMecrchant(getDriver());
@@ -51,4 +54,22 @@ public class apiLog extends baseClass{
 	    api.checkTransactionStatus(getDriver());
 		
   }
+  
+	@Test(dataProvider = "HeadersProvider", dataProviderClass = DataProviders.class)
+	public void verifyTableHeaders(List<String> expectedHeaders) {
+	    
+	    List<String> actualHeaders =api.verifyHeaders(getDriver());
+
+	    Assert.assertEquals(actualHeaders, expectedHeaders, "❌ Table headers do not match!");
+	    System.out.println("✅ Headers match exactly!");
+	}
+
+  
+  
+  
+  
+  
+  
+  
+  
 }

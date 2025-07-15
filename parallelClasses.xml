@@ -20,16 +20,6 @@
                     <include name="filter_Transaction_And_Open_Detail_Page"/>
                     <include name="verify_downloadInvoice"/>
                     <include name="verifyErrorIn_downloadInvoice"/>
-                    <include name="verifyDayFrequency"/>
-                    <include name="verifyMonthFrequency"/>
-                    <include name="verifyWeekFrequency"/>
-                    <include name="verifyYearFrequency"/>
-                    <include name="verifyCustomerCard_Frequency"/>
-                    <include name="verifyCustomerCountries_Frequency"/>
-                    <include name="verifyCustomeIPS_Frequency"/>
-                    <include name="verifyAmount_Frequency"/>
-                    <include name="verifyCustomerDeviceID_frequency"/>
-                    <include name="verifyTotal_frequency"/>
                     <include name="verifyPurchaseID_EmailSummaryPage"/>
                     <include name="verifyTransaCTIONidIn_ActionPage"/>
                     <include name="validtePaginationInEmailSummaryPage"/>

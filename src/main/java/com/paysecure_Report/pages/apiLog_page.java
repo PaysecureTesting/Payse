@@ -1,10 +1,12 @@
 package com.paysecure_Report.pages;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
 
+import org.apache.poi.hpsf.Array;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -189,6 +191,19 @@ public void checkTransactionStatus(WebDriver driver) {
 
 }
 
+public List<String> verifyHeaders(WebDriver driver) {
+	
+	List<WebElement> headerElement = driver.findElements(By.xpath("(//table[@class='table table-bordered'])[2]/descendant::th"));
+	
+	  
+	List<String> actualHeaders = new ArrayList<>();
+
+	for (WebElement header : headerElement) {
+		actualHeaders.add(header.getText().trim());
+	}
+	return actualHeaders;
+	
+}
 
 
 

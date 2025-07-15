@@ -73,7 +73,8 @@ public class email_transactionPage {
 		@FindBy(xpath="//label[@id='pagtext1']//following-sibling::span[3]") private WebElement TOTAL_fREQ;
 		private By canceEmaillButton = By.xpath("//h5[text()='Email Summary']/following-sibling::button");  
 		
-		private By showing=By.xpath("//label[@id='dailypagtext']");
+		private By showing=By.xpath("//label[text()='Showing ']");
+		private By showing_1=By.xpath("(//label[text()='Showing '])[2]");
 		
 		
 		//email summery page
@@ -396,7 +397,7 @@ public class email_transactionPage {
 
 		
 		//String total_Frequency = actionDriver.getText(totalFrequency);
-		actionDriver.scrollToElement(showing);
+		actionDriver.scrollToElement(showing_1);
 		
 		 String TOTAL_FREQ =TOTAL_fREQ.getText();
 		Assert.assertEquals(tota,TOTAL_FREQ );
@@ -497,7 +498,7 @@ public class email_transactionPage {
 	        WebElement nextButtonContainer = driver.findElement(By.xpath("(//li[contains(@class,'page-item next')])[2]"));
 	        String classAttr = nextButtonContainer.getAttribute("class");
 
-	        if (classAttr.contains("disabled")) {
+	        if (classAttr.contains("page-item next disabled")) {
 	            System.out.println("✅ Reached last page.");
 	            break;
 	        }
@@ -530,7 +531,7 @@ public class email_transactionPage {
 		        	
 		        	actionDriver.scrollToElement(showing);
 		        	
-		            List<WebElement> columns = row.findElements(By.xpath("(//th[text()='Transaction ID'])[1]/ancestor::table//td[4]"));
+		            List<WebElement> columns = row.findElements(By.xpath("(//th[text()='Transaction ID'])[1]/ancestor::table//td[6]"));
 
 		            for (WebElement cell : columns) {
 		                String cellText = cell.getText().trim();
@@ -546,7 +547,7 @@ public class email_transactionPage {
 		                            cell.click(); // Otherwise, click the cell itself
 		                        }
 		                    } catch (Exception e) {
-		                        System.out.println("⚠️ Error clicking on email: " + e.getMessage());
+		                        System.out.println("⚠️ Error clicking on email: " + e.getMessage());                                                                                                                                                                
 		                    }
 
 		                    emailClicked = true;
@@ -563,7 +564,7 @@ public class email_transactionPage {
 		        WebElement nextButtonContainer = driver.findElement(By.xpath("//li[@class='page-item next']"));
 		        String classAttr = nextButtonContainer.getAttribute("class");
 
-		        if (classAttr.contains("disabled")) {
+		        if (classAttr.contains("page-item next disabled")) {
 		            System.out.println("❌ Email not found in any page.");
 		            break;
 		        }

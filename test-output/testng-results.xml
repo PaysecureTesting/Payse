@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[User enter ID in Username field]]>
@@ -10,21 +10,42 @@
     <line>
       <![CDATA[Click on submit button in login page]]>
     </line>
+    <line>
+      <![CDATA[Click on Report Module]]>
+    </line>
+    <line>
+      <![CDATA[Click on Transaction Log Sub Module]]>
+    </line>
+    <line>
+      <![CDATA[Verify user is on the Transaction Log page]]>
+    </line>
+    <line>
+      <![CDATA[Click on the Date range]]>
+    </line>
+    <line>
+      <![CDATA[select date range :- Last 30 Days]]>
+    </line>
+    <line>
+      <![CDATA[User enter purchase ID in Purchase ID text Field]]>
+    </line>
+    <line>
+      <![CDATA[Click on Search Button]]>
+    </line>
   </reporter-output>
-  <suite started-at="2025-07-14T10:25:55 IST" name="Default suite" finished-at="2025-07-14T10:26:30 IST" duration-ms="34960">
+  <suite started-at="2025-07-15T10:44:14 IST" name="Default suite" finished-at="2025-07-15T10:44:39 IST" duration-ms="24341">
     <groups>
     </groups>
-    <test started-at="2025-07-14T10:25:55 IST" name="Default test" finished-at="2025-07-14T10:26:30 IST" duration-ms="34960">
-      <class name="com.report.test.transaction">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@2e029d61]" started-at="2025-07-14T10:25:55 IST" name="loadConfig" finished-at="2025-07-14T10:25:55 IST" duration-ms="43" status="PASS">
+    <test started-at="2025-07-15T10:44:14 IST" name="Default test" finished-at="2025-07-15T10:44:39 IST" duration-ms="24341">
+      <class name="com.report.test.transactionLog">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transactionLog@6e521c1e]" started-at="2025-07-15T10:44:14 IST" name="loadConfig" finished-at="2025-07-15T10:44:14 IST" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@2e029d61]" started-at="2025-07-14T10:25:55 IST" name="setup" finished-at="2025-07-14T10:26:01 IST" duration-ms="6522" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transactionLog@6e521c1e]" started-at="2025-07-15T10:44:15 IST" name="setup" finished-at="2025-07-15T10:44:20 IST" duration-ms="5288" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@2e029d61]" started-at="2025-07-14T10:26:01 IST" name="setUp" finished-at="2025-07-14T10:26:09 IST" duration-ms="8143" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.report.test.transactionLog@6e521c1e]" started-at="2025-07-15T10:44:20 IST" name="beforeMethod" finished-at="2025-07-15T10:44:29 IST" duration-ms="9469" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -35,63 +56,45 @@
             <line>
               <![CDATA[Click on submit button in login page]]>
             </line>
+            <line>
+              <![CDATA[Click on Report Module]]>
+            </line>
+            <line>
+              <![CDATA[Click on Transaction Log Sub Module]]>
+            </line>
+            <line>
+              <![CDATA[Verify user is on the Transaction Log page]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testClickFirstEmailOccurrenceOf_Card()[pri:0, instance:com.report.test.transaction@2e029d61]" started-at="2025-07-14T10:26:09 IST" name="testClickFirstEmailOccurrenceOf_Card" finished-at="2025-07-14T10:26:30 IST" duration-ms="20080" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verify_purchaseIDJson()[pri:0, instance:com.report.test.transactionLog@6e521c1e]" started-at="2025-07-15T10:44:29 IST" name="verify_purchaseIDJson" finished-at="2025-07-15T10:44:39 IST" duration-ms="9466" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='First']"}
-  (Session info: chrome=138.0.7204.101)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0fe9ac2ce570925eb3c8c1d2633459e3, findElement {using=xpath, value=//a[text()='First']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52111}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52111/devtoo..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0fe9ac2ce570925eb3c8c1d2633459e3]]>
+              <![CDATA[expected [6875e2ddfbb293189ae7acb8] but found [Not found]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='First']"}
-  (Session info: chrome=138.0.7204.101)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0fe9ac2ce570925eb3c8c1d2633459e3, findElement {using=xpath, value=//a[text()='First']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52111}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52111/devtoo..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0fe9ac2ce570925eb3c8c1d2633459e3
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at com.report.test.transaction.testClickFirstEmailOccurrenceOf_Card(transaction.java:327)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+              <![CDATA[java.lang.AssertionError: expected [6875e2ddfbb293189ae7acb8] but found [Not found]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.paysecure_Report.pages.transaction_Log_page.verifyPurchaseID(transaction_Log_page.java:152)
+at com.report.test.transactionLog.verify_purchaseIDJson(transactionLog.java:51)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
 at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
 at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
@@ -107,15 +110,27 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
+            <line>
+              <![CDATA[Click on the Date range]]>
+            </line>
+            <line>
+              <![CDATA[select date range :- Last 30 Days]]>
+            </line>
+            <line>
+              <![CDATA[User enter purchase ID in Purchase ID text Field]]>
+            </line>
+            <line>
+              <![CDATA[Click on Search Button]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- testClickFirstEmailOccurrenceOf_Card -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@2e029d61]" started-at="2025-07-14T10:26:30 IST" name="tearDown" finished-at="2025-07-14T10:26:30 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- verify_purchaseIDJson -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transactionLog@6e521c1e]" started-at="2025-07-15T10:44:39 IST" name="tearDown" finished-at="2025-07-15T10:44:39 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.report.test.transaction -->
+      </class> <!-- com.report.test.transactionLog -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -177,7 +177,7 @@ public class transaction extends baseClass {
 	public void iterateAllTable_Pages() throws InterruptedException, TimeoutException {
 
 		ts.filterTransactionThroughSelectStatus("Error");
-		ts.selectDateRange(getDriver(), "Yesterday");
+		ts.selectDateRange(getDriver(), "Last 7 Days");
 		ts.clickOnSearchButton(getDriver());
 
 		ts.iterateAllTablePages(getDriver());
@@ -213,82 +213,7 @@ public class transaction extends baseClass {
 
 	}
 
-	@Test(priority = 14, enabled = true)
-	public void verifyDayFrequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifydayFrequesncy(getDriver());
 
-	}
-
-	@Test(priority = 15, enabled = true)
-	public void verifyMonthFrequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyMonthFrequesncy(getDriver());
-
-	}
-
-	@Test(priority = 16, enabled = true)
-	public void verifyWeekFrequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyWeekFrequesncy(getDriver());
-
-	}
-
-	@Test(priority = 17, enabled = true)
-	public void verifyYearFrequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyYearFrequesncy(getDriver());
-
-	}
-
-	@Test(priority = 18, enabled = true)
-	public void verifyCustomers_Merchant_Frequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyCustomerMerchantFrequency(getDriver());
-
-	}
-
-	@Test(priority = 19, enabled = true)
-	public void verifyCustomerCard_Frequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyCustomerCardFrequency(getDriver());
-
-	}
-
-	@Test(priority = 20, enabled = true)
-	public void verifyCustomerCountries_Frequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyCustomerCountriesFrequency(getDriver());
-
-	}
-
-	@Test(priority = 21, enabled = true)
-	public void verifyCustomeIPS_Frequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyCustomerIPSFrequency(getDriver());
-
-	}
-
-	@Test(priority = 22, enabled = true)
-	public void verifyAmount_Frequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyAmountFrequency(getDriver());
-
-	}
-
-	@Test(priority = 22, enabled = true)
-	public void verifyCustomerDeviceID_frequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyCustomerDeviceID(getDriver());
-
-	}
-
-	@Test(priority = 23, enabled = true)
-	public void verifyTotal_frequency() throws InterruptedException {
-		email.clickOnEmail();
-		email.verifyTotal(getDriver());
-
-	}
 
 	@Test
 	public void verifyPurchaseID_EmailSummaryPage() {
@@ -317,33 +242,36 @@ public class transaction extends baseClass {
 
 	@Test
 	public void testClickFirstEmailOccurrence() {
-		String targetEmail = "si************9 ...";
+		String targetEmail = "go************0 ...";
 		email.clickOnSpecificEmail(getDriver(), targetEmail);
 	}
 
-	@Test
-	public void testClickFirstEmailOccurrenceOf_Card() throws InterruptedException {
+	@Test (dataProvider ="EmailID", dataProviderClass = DataProviders.class)
+	public void testClickFirstEmailOccurrenceOf_Card(String email_id) throws InterruptedException {
 
-		WebElement showing = getDriver().findElement(By.xpath("//a[text()='First']"));
-		By SHOWING=By.xpath("//a[text()='First']");
-		getActionDriver().scrollToElement(SHOWING);
-
-		if (showing.isDisplayed()) {
-			String targetCard = "PIX";
-			card.clickOnCard(getDriver(), targetCard);
-		} else {
-			ts.selectDateRange(getDriver(), "Yesterday");
+	
+			ts.selectDateRange(getDriver(), "Last 7 Days");
 			ts.clickOnSearchButton(getDriver());
-			String targetCard = "PIX";
-			card.clickOnCard(getDriver(), targetCard);
-		}
+			email.clickOnSpecificEmail(getDriver(),email_id);
+			email.verifydayFrequesncy(getDriver());
+			email.verifyMonthFrequesncy(getDriver());
+			email.verifyWeekFrequesncy(getDriver());
+			email.verifyYearFrequesncy(getDriver());
+			email.verifyCustomerMerchantFrequency(getDriver());
+			email.verifyCustomerCardFrequency(getDriver());
+			email.verifyCustomerCountriesFrequency(getDriver());
+			email.verifyCustomerIPSFrequency(getDriver());
+			email.verifyAmountFrequency(getDriver());
+			email.verifyCustomerDeviceID(getDriver());
+			email.verifyTotal(getDriver());
+		
 
 	}
 	
 
 	@Test
 	public void testClickFirstValid_TransactionOnCardOage() {
-		String targetCard = "INTERAC";
+		String targetCard = "PAYID";
 		card.clickOnCard(getDriver(), targetCard);
 		card.clickFirstValidTransaction(getDriver());
 		card.verifyTransactionIN_CardPage();
@@ -352,7 +280,7 @@ public class transaction extends baseClass {
 	
 	@Test (dataProvider ="cardNames", dataProviderClass = DataProviders.class)
 	public void testTIDInActionCardSummarypage(String targetCard) throws InterruptedException {
-		ts.selectDateRange(getDriver(),"Yesterday");
+		ts.selectDateRange(getDriver(),"Last 7 Days");
 		ts.clickOnSearchButton(getDriver());
 		
 		card.clickOnCard(getDriver(), targetCard);

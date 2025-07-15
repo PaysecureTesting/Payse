@@ -1,6 +1,8 @@
 package com.paysecure_Report.pages;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -160,5 +162,29 @@ public class transaction_Log_page {
 		}
 		return "Not found";
 	}
+	
+	
+	
+	public List<String> verifyHeaders(WebDriver driver) {
+		
+		List<WebElement> headerElement = driver.findElements(By.xpath("//th[@scope='col']"));
+		
+		  
+		List<String> actualHeaders = new ArrayList<>();
+
+		for (WebElement header : headerElement) {
+			actualHeaders.add(header.getText().trim());
+		}
+		return actualHeaders;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
