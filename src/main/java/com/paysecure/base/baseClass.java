@@ -33,24 +33,25 @@ public class baseClass {
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	private static ThreadLocal<ActionDriver> actionDriver = new ThreadLocal<>();
 	public static final Logger logger = LoggerManager.getLogger(baseClass.class);
-	
+
 	protected ThreadLocal<SoftAssert> softAssert = ThreadLocal.withInitial(SoftAssert::new);
 
-	//Getter method for soft assert
+	// Getter method for soft assert
 	public SoftAssert getSoftAssert() {
 		return softAssert.get();
 	}
-	
+
 	@BeforeSuite
 	public void loadConfig() throws IOException {
 		// Load the configuration file
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\LENOVO\\Downloads\\yyy123\\pay\\src\\main\\resources\\config.properties");
+		FileInputStream fis = new FileInputStream(
+				"C:\\Users\\LENOVO\\Downloads\\yyy123\\pay\\src\\main\\resources\\config.properties");
 		prop.load(fis);
 		logger.info("config.properties file loaded");
-		
-		//Start the Extent Report
-		//ExtentManager.getReporter();  --This has been implemented in TestListener
+
+		// Start the Extent Report
+		// ExtentManager.getReporter(); --This has been implemented in TestListener
 	}
 
 	@BeforeMethod
@@ -59,7 +60,7 @@ public class baseClass {
 		launchBrowser();
 		configureBrowser();
 		staticWait(2);
-		//Sample logger message
+		// Sample logger message
 		logger.info("WebDriver Initialized and Browser Maximized");
 		logger.trace("This is a Trace message");
 		logger.error("This is a error message");
@@ -88,22 +89,23 @@ public class baseClass {
 		String browser = prop.getProperty("browser");
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			
+
 			// Create ChromeOptions
 			ChromeOptions options = new ChromeOptions();
-		//	options.addArguments("--headless"); // Run Chrome in headless mode
+			// options.addArguments("--headless"); // Run Chrome in headless mode
 			options.addArguments("--disable-gpu"); // Disable GPU for headless mode
-			//options.addArguments("--window-size=1920,1080"); // Set window size
+			// options.addArguments("--window-size=1920,1080"); // Set window size
 			options.addArguments("--disable-notifications"); // Disable browser notifications
 			options.addArguments("--no-sandbox"); // Required for some CI environments like Jenkins
 			options.addArguments("--disable-dev-shm-usage"); // Resolve issues in resource-limited environments
 
 			// driver = new ChromeDriver();
 			driver.set(new ChromeDriver(options)); // New Changes as per Thread
+
 			ExtentManager.registerDriver(getDriver());
 			logger.info("ChromeDriver Instance is created.");
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			
+
 			// Create FirefoxOptions
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless"); // Run Firefox in headless mode
@@ -119,15 +121,15 @@ public class baseClass {
 			ExtentManager.registerDriver(getDriver());
 			logger.info("FirefoxDriver Instance is created.");
 		} else if (browser.equalsIgnoreCase("edge")) {
-			
+
 			EdgeOptions options = new EdgeOptions();
-		//	options.addArguments("--headless"); // Run Edge in headless mode
+			// options.addArguments("--headless"); // Run Edge in headless mode
 			options.addArguments("--disable-gpu"); // Disable GPU acceleration
 			options.addArguments("--window-size=1920,1080"); // Set window size
 			options.addArguments("--disable-notifications"); // Disable pop-up notifications
 			options.addArguments("--no-sandbox"); // Needed for CI/CD
 			options.addArguments("--disable-dev-shm-usage"); // Prevent resource-limited crashes
-			
+
 			// driver = new EdgeDriver();
 			driver.set(new EdgeDriver(options)); // New Changes as per Thread
 			ExtentManager.registerDriver(getDriver());
@@ -162,7 +164,7 @@ public class baseClass {
 	public synchronized void tearDown() {
 		if (getDriver() != null) {
 			try {
-			//	getDriver().quit();
+				// getDriver().quit();
 			} catch (Exception e) {
 				System.out.println("unable to quit the driver:" + e.getMessage());
 			}
@@ -172,7 +174,7 @@ public class baseClass {
 		actionDriver.remove();
 		// driver = null;
 		// actionDriver = null;
-		//ExtentManager.endTest(); --This has been implemented in TestListener
+		// ExtentManager.endTest(); --This has been implemented in TestListener
 	}
 
 	/*

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 
 import com.paysecure.base.baseClass;
-import com.paysecure.pages.loginPage;
+import com.paysecure.loginPage.loginPage;
 import com.paysecure.utilities.DataProviders;
 import com.paysecure_Report.pages.cardSummary_transactionPage;
 import com.paysecure_Report.pages.email_transactionPage;

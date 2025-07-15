@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.paysecure.base.baseClass;
-import com.paysecure.pages.loginPage;
+import com.paysecure.loginPage.loginPage;
 import com.paysecure_Report.pages.apiLog_page;
 import com.paysecure_Report.pages.bank_Transaction_Time;
 import com.paysecure_Report.pages.download_page;
@@ -57,8 +57,6 @@ public class download extends baseClass {
 		tl.click_downloadButton(getDriver());
 		download.noRecordsFound(getDriver());
 		download.clickONOKButton(getDriver());
-		
 
-		
   }
 }

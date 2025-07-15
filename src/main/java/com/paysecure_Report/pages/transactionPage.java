@@ -191,8 +191,8 @@ public class transactionPage {
 	
 
 	// variable directory
-	String partialMerchantname = "AbhiMerc";
-	String merchant = "AbhiMerchant";
+	String partialMerchantname = "M";
+	String merchant = "mukesh1";
 	String bankName = "Delhi";
 	String finalBankName="Delhi Lo";
 

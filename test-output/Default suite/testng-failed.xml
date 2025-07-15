@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.report.test.transaction">
+      <class name="com.report.test.errorLog">
         <methods>
           <include name="loadConfig"/>
-          <include name="testClickFirstEmailOccurrenceOf_Card" invocation-numbers="3"/>
-          <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="beforeMethod"/>
           <include name="setup"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- com.report.test.transaction -->
+      </class> <!-- com.report.test.errorLog -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.paysecure.base.baseClass;
-import com.paysecure.pages.loginPage;
+import com.paysecure.loginPage.loginPage;
 import com.paysecure.utilities.DataProviders;
 import com.paysecure_Report.pages.bank_Transaction_Time;
 import com.paysecure_Report.pages.transactionPage;
