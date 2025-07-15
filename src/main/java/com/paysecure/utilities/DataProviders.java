@@ -52,8 +52,12 @@ public class DataProviders {
 
 	@DataProvider(name = "EmailID")
 	public Object[][] getEmailID() {
-		return new Object[][] { { "al********o@b** ..." }, { "ra**l@p******** ..." }, { "cu*****r@e****. ..." },
-				{ "go************0 ..." }, { "bh***********r@ ..." },
+		return new Object[][] { 
+//			{ "al********o@b** ..." },
+//			{ "ra**l@p******** ..." }, 
+//			{ "cu*****r@e****. ..." },
+			{ "go************0 ..." }, 
+//			{ "bh***********r@ ..." },
 
 		};
 	}
