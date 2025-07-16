@@ -7,57 +7,29 @@ import org.testng.annotations.DataProvider;
 
 public class DataProviders {
 
-	private static final String FILE_PATH = System.getProperty("user.dir")
-			+ "/src/test/resources/testdata/TestData.xlsx";
 
-	@DataProvider(name = "validLoginData")
-	public static Object[][] validLoginData() {
-		return getSheetData("validLoginData");
-	}
-
-	@DataProvider(name = "inValidLoginData")
-	public static Object[][] inValidLoginData() {
-		return getSheetData("inValidLoginData");
-	}
-
-	@DataProvider(name = "emplVerification")
-	public static Object[][] emplVerfication() {
-		return getSheetData("emplVerfication");
-	}
-
-	private static Object[][] getSheetData(String sheetName) {
-		List<String[]> sheetData = ExcelReaderUtility.getSheetData(FILE_PATH, sheetName);
-
-		Object[][] data = new Object[sheetData.size()][sheetData.get(0).length];
-
-		for (int i = 0; i < sheetData.size(); i++) {
-			data[i] = sheetData.get(i);
-		}
-
-		return data;
-	}
 
 	@DataProvider(name = "cardNames")
 	public Object[][] getCardNames() {
 		return new Object[][] {
-//			{ "MOBILEMONEY" }, 
-//			{ "INTERAC" }, 
-//			{ "PIX" },
-//			{ "50785078******7812" }, 
+			{ "MOBILEMONEY" }, 
+			{ "INTERAC" }, 
+			{ "PIX" },
+			{ "50785078******7812" }, 
 			{ "PAYID" },
-//				{ "40840840****4081" }, 
-//				{ "VIRTUAL-ACCOUNT" }, 
+				{ "40840840****4081" }, 
+				{ "VIRTUAL-ACCOUNT" }, 
 				};
 	}
 
 	@DataProvider(name = "EmailID")
 	public Object[][] getEmailID() {
 		return new Object[][] { 
-//			{ "al********o@b** ..." },
-//			{ "ra**l@p******** ..." }, 
-//			{ "cu*****r@e****. ..." },
+			{ "al********o@b** ..." },
+			{ "ra**l@p******** ..." }, 
+			{ "cu*****r@e****. ..." },
 			{ "go************0 ..." }, 
-//			{ "bh***********r@ ..." },
+			{ "bh***********r@ ..." },
 
 		};
 	}
@@ -86,7 +58,73 @@ public class DataProviders {
 	    };
 	}
 	
-	
+	@DataProvider(name = "usernameTestData")
+	public Object[][] getUsernameTestData() {
+	    return new Object[][] {
+	        {"", "This field is required", "//input[@id='username1']/following-sibling::span[contains(normalize-space(), 'field is required')]"},
+	        {"abc", "Username should be min 5 character", "(//span[@class='text-danger'])[1]"},
+	        {"abc der", "Space not allowed", "//input[@id='username1']/following-sibling::span[contains(normalize-space(), 'not allowed')]"}
+	    };
+	}
+
+	@DataProvider(name = "passwordTestData")
+	public Object[][] getPasswordTestData() {
+	    return new Object[][] {
+	        {"", "This field is required", "//input[@id='password1']/ancestor::div[@class='form-group col-md-12']/div/following-sibling::span"},                                                                                                                                                                                                                                                                                                                                                   
+	        {"a", "At least one small and one capital letter, one digit, one special character", "//input[@id='password1']/ancestor::div[@class='form-group col-md-12']//span[contains(normalize-space(), 'one small and one capital letter')]"},
+	        {"a  r",  "Space not allowed", "(//span[@class='text-danger ng-scope'])[3]"}
+	        };
+	        
+	        
+	        
+	}
+	@DataProvider(name = "emailIDTestData")
+	public Object[][] emailProvider() {
+
+	    String requiredLocator = "//input[@id='emailaddress1']/following-sibling::span"
+	                             + "[contains(normalize-space(),'field is required')]";
+	    String invalidLocator  = "//input[@id='emailaddress1']/following-sibling::span"
+	                             + "[contains(normalize-space(),'Email address')]";
+
+	    List<String> invalidEmails = Arrays.asList(
+	        "suhas@gmail",
+	        "suhas@gmailcom",
+	        "suhas@.com",
+	        "@gmail.com",
+	        "suhas@",
+	        "suhas",
+	        "suhas@ gmail.com",
+	        "suhas @gmail.com",
+	        "suhas@gmail..com",
+	        "suhas@gmail.c",
+	        "suhas@gmail,com",
+	        "suhas@#mail.com",
+	        "suhas@@gmail.com",
+	        ".suhas@gmail.com",
+	        "suhas.@gmail.com",
+	        "suhas..patil@gmail.com",
+	        "suhas@-gmail.com",
+	        "suhas@gmail-.com",
+	        "suhas@.gmail.com",
+	        "suhas@g_mail.com"
+	    );
+
+	    /* +1 row for the “required” test case */
+	    Object[][] data = new Object[invalidEmails.size() + 1][3];
+
+	    // row 0 → required‑field case
+	    data[0] = new Object[] { "", "This field is required", requiredLocator };
+
+	    // the rest → invalid formats
+	    for (int i = 0; i < invalidEmails.size(); i++) {
+	        data[i + 1] = new Object[] { invalidEmails.get(i), "Invalid Email address", invalidLocator };
+	    }
+	    return data;
+	}
+
+	        
+	        
+	        
 	
 
 }

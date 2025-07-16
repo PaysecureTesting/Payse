@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="8" total="9" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[User enter ID in Username field]]>
@@ -17,26 +17,38 @@
       <![CDATA[User is on the Manage Roles Main Module]]>
     </line>
     <line>
-      <![CDATA[User search username/Merchant :- gouri_sharma]]>
+      <![CDATA[User Click on add Roles]]>
     </line>
     <line>
-      <![CDATA[User Click on search button]]>
+      <![CDATA[User enter name in Username text field :- Suhas]]>
+    </line>
+    <line>
+      <![CDATA[User enter password in Password text field :- Paysecure@123]]>
+    </line>
+    <line>
+      <![CDATA[ user enter email address in email address field :- paysecure@gmail.com]]>
+    </line>
+    <line>
+      <![CDATA[ user select role from roles dropdown :- paysecure@gmail.com]]>
+    </line>
+    <line>
+      <![CDATA[User click on Add role button]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-07-15T17:36:41 IST" name="Default suite" finished-at="2025-07-15T17:37:01 IST" duration-ms="20043">
+  <suite started-at="2025-07-16T15:43:20 IST" name="Default suite" finished-at="2025-07-16T15:43:39 IST" duration-ms="18844">
     <groups>
     </groups>
-    <test started-at="2025-07-15T17:36:41 IST" name="Default test" finished-at="2025-07-15T17:37:01 IST" duration-ms="20043">
+    <test started-at="2025-07-16T15:43:20 IST" name="Default test" finished-at="2025-07-16T15:43:39 IST" duration-ms="18844">
       <class name="com.paysecure.admin.manageRoles">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.paysecure.admin.manageRoles@7c51f34b]" started-at="2025-07-15T17:36:41 IST" name="loadConfig" finished-at="2025-07-15T17:36:41 IST" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.paysecure.admin.manageRoles@57576994]" started-at="2025-07-16T15:43:20 IST" name="loadConfig" finished-at="2025-07-16T15:43:20 IST" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.admin.manageRoles@7c51f34b]" started-at="2025-07-15T17:36:41 IST" name="setup" finished-at="2025-07-15T17:36:47 IST" duration-ms="6246" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.paysecure.admin.manageRoles@57576994]" started-at="2025-07-16T15:43:20 IST" name="setup" finished-at="2025-07-16T15:43:26 IST" duration-ms="6130" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.admin.manageRoles@7c51f34b]" started-at="2025-07-15T17:36:47 IST" name="setupPages" finished-at="2025-07-15T17:36:57 IST" duration-ms="9903" status="PASS">
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.paysecure.admin.manageRoles@57576994]" started-at="2025-07-16T15:43:27 IST" name="setupPages" finished-at="2025-07-16T15:43:36 IST" duration-ms="9269" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -55,17 +67,29 @@
             </line>
           </reporter-output>
         </test-method> <!-- setupPages -->
-        <test-method signature="verifyRefreshPage_SearchFunctionalityIfUserEnterWrongMerchant_Username()[pri:0, instance:com.paysecure.admin.manageRoles@7c51f34b]" started-at="2025-07-15T17:36:57 IST" name="verifyRefreshPage_SearchFunctionalityIfUserEnterWrongMerchant_Username" finished-at="2025-07-15T17:37:01 IST" duration-ms="3639" status="PASS">
+        <test-method signature="create_Role()[pri:0, instance:com.paysecure.admin.manageRoles@57576994]" started-at="2025-07-16T15:43:36 IST" name="create_Role" finished-at="2025-07-16T15:43:39 IST" duration-ms="3162" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[User search username/Merchant :- gouri_sharma]]>
+              <![CDATA[User Click on add Roles]]>
             </line>
             <line>
-              <![CDATA[User Click on search button]]>
+              <![CDATA[User enter name in Username text field :- Suhas]]>
+            </line>
+            <line>
+              <![CDATA[User enter password in Password text field :- Paysecure@123]]>
+            </line>
+            <line>
+              <![CDATA[ user enter email address in email address field :- paysecure@gmail.com]]>
+            </line>
+            <line>
+              <![CDATA[ user select role from roles dropdown :- paysecure@gmail.com]]>
+            </line>
+            <line>
+              <![CDATA[User click on Add role button]]>
             </line>
           </reporter-output>
-        </test-method> <!-- verifyRefreshPage_SearchFunctionalityIfUserEnterWrongMerchant_Username -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.paysecure.admin.manageRoles@7c51f34b]" started-at="2025-07-15T17:37:01 IST" name="tearDown" finished-at="2025-07-15T17:37:01 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- create_Role -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.paysecure.admin.manageRoles@57576994]" started-at="2025-07-16T15:43:39 IST" name="tearDown" finished-at="2025-07-16T15:43:39 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
