@@ -27,6 +27,7 @@ public class transactionPage {
 	// scrolling point of view
 	private By analytics = By.xpath("//span[text()='Analytics']");
 	private By lastStatus = By.xpath("//th[text()='Last Status']");
+	
 	// report
 	private By report = By.xpath("(//span[text()='Report'])[2]");
 
@@ -236,6 +237,7 @@ public class transactionPage {
 		actionDriver.click(report);
 
 		actionDriver.click(transactions);
+		Assert.fail();
 
 	}
 

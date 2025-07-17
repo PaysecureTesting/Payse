@@ -3,7 +3,9 @@ package com.paysecure.Admin.pages;
 import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,6 +22,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import com.paysecure.actiondriver.ActionDriver;
+import com.paysecure.utilities.testData_CreateRoll;
 
 public class manageRoles_page {
 	// Navigate - Manage Roles
@@ -28,6 +31,7 @@ public class manageRoles_page {
 
 	// search Functionality
 	private By search = By.xpath("//input[@placeholder='Username or Merchant Name']");
+	@FindBy(xpath="//input[@placeholder='Username or Merchant Name']") private WebElement SEARCH;
 	private By searchButton = By.xpath("//input[@placeholder='Username or Merchant Name']/following-sibling::button");
 
 	@FindBy(xpath = "//span[@name='fordeleterole']")
@@ -41,7 +45,7 @@ public class manageRoles_page {
 	private By emailAddress = By.xpath("//input[@id='emailaddress1']");
 	private By role = By.xpath("//select[@id='role_id1']");
 	@FindBy(xpath="//select[@id='role_id1']") private WebElement ROLE;
-	private By addRoleButton = By.xpath("//button[@id='addRoleButton']");
+	private By addRoleButton = By.xpath("(//button[text()='Add Role'])[2]");
 	private By genPass = By.xpath("//button[text()='GenPass']");
 	@FindBy(xpath = "//input[@id='password1']")
 	private WebElement PASSWORD;
@@ -225,24 +229,54 @@ public class manageRoles_page {
 	}
 	
 	
-	public void createRoll(String username, String pass , String email, String  roles) {
+	 public Map<String, String> createRole() throws InterruptedException {
+	        String username = testData_CreateRoll.generateRandomUsername();
+	        String pass     = testData_CreateRoll.generateRandomPassword();
+	        String email    = testData_CreateRoll.generateRandomEmail();
+	        String roles    = "MERCHANT";
+
+	        actionDriver.enterText(userName, username);
+	        actionDriver.click(genPass);
+	        actionDriver.enterText(emailAddress, email);
+	      
+	       actionDriver.selectByVisibleText(role, roles);
+	       
+	       actionDriver.click(addRoleButton);
+
+
+	        Thread.sleep(1500);
+	      
+
+	        Map<String, String> data = new HashMap<>();
+	        data.put("username", username);
+	        data.put("password", pass);
+	        data.put("role", roles);
+	        return data;
+	    }
+
+
+	 public void searchRoleAfterCreating(WebDriver driver) throws InterruptedException {
 		
-		actionDriver.enterText(userName, username);
-		Reporter.log("User enter name in Username text field :- " + username, true);
-		
-		actionDriver.enterText(password, pass);
-		Reporter.log("User enter password in Password text field :- " +pass, true);
-		
-		actionDriver.enterText(emailAddress, email);
-		Reporter.log(" user enter email address in email address field :- " + email, true);
-		
-		actionDriver.selectByVisibleText(role, roles);
-		Reporter.log(" user select role from roles dropdown :- " + email, true);
-		
-		actionDriver.click(addRoleButton);
-		Reporter.log("User click on Add role button", true);
-	}
-	
+		 manageRoles_page mr=new manageRoles_page(driver);
+
+		// Call the method and store the returned data
+		Map<String, String> userDetails1 = mr.createRole();
+
+		// Access individual values
+		String username1 = userDetails1.get("username");
+		String password = userDetails1.get("password");
+		String role = userDetails1.get("role");
+
+		// Example use
+		System.err.println("Created user: " + username1);
+		System.err.println("Password: " + password);
+		System.err.println("Role: " + role);
+	       
+	        
+	        actionDriver.click(search);
+	        actionDriver.enterText(search, username1);
+	        actionDriver.click(searchButton);
+	    }
 
 	
 

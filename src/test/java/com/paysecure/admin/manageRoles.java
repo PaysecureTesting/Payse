@@ -1,5 +1,7 @@
 package com.paysecure.admin;
 
+import java.util.Map;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -88,17 +90,18 @@ public class manageRoles extends baseClass {
 	}
 	
 	
-	@Test
-	public void create_Role() {
+	@Test(invocationCount =2)
+	public void create_Role() throws InterruptedException {
 		mr.clickOnAddRole();
-		mr.createRoll("Suhas","Paysecure@123","paysecure@gmail.com","WHITELABEL");
-		
+		mr.createRole();
+		Thread.sleep(20000);
+        mr.searchRoleAfterCreating(getDriver());;
 		
 	}
 	
 	
 	
-	
+	//tomjerry_1a5
 	
 	
 	
