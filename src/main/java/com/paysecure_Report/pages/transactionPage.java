@@ -237,7 +237,7 @@ public class transactionPage {
 		actionDriver.click(report);
 
 		actionDriver.click(transactions);
-		Assert.fail();
+	
 
 	}
 

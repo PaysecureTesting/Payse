@@ -7,9 +7,9 @@
         <methods>
           <include name="loadConfig"/>
           <include name="setUp"/>
+          <include name="testClickFirstValid_TransactionOnCardOage"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="testTIDInHistoryCardSummarypage"/>
         </methods>
       </class> <!-- com.report.test.transaction -->
     </classes>
