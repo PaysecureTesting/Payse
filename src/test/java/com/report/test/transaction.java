@@ -286,6 +286,7 @@ public class transaction extends baseClass {
 		card.clickOnCard(getDriver(), targetCard);
 		card.clickOnActionColumn(getDriver());
 		card.verifyPurchaseIDOnActionPage();
+		card.verifymercahntNameOnActionPage();
 		
 		
 	}

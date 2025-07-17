@@ -20,20 +20,20 @@
       <![CDATA[User click on Search Buttton]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-07-17T17:42:17 IST" name="Default suite" finished-at="2025-07-17T17:42:37 IST" duration-ms="20312">
+  <suite started-at="2025-07-17T18:08:51 IST" name="Default suite" finished-at="2025-07-17T18:09:22 IST" duration-ms="31668">
     <groups>
     </groups>
-    <test started-at="2025-07-17T17:42:17 IST" name="Default test" finished-at="2025-07-17T17:42:37 IST" duration-ms="20312">
+    <test started-at="2025-07-17T18:08:51 IST" name="Default test" finished-at="2025-07-17T18:09:22 IST" duration-ms="31668">
       <class name="com.report.test.transaction">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T17:42:17 IST" name="loadConfig" finished-at="2025-07-17T17:42:17 IST" duration-ms="15" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T18:08:51 IST" name="loadConfig" finished-at="2025-07-17T18:08:51 IST" duration-ms="32" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T17:42:17 IST" name="setup" finished-at="2025-07-17T17:42:22 IST" duration-ms="5511" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T18:08:51 IST" name="setup" finished-at="2025-07-17T18:08:57 IST" duration-ms="6151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T17:42:22 IST" name="setUp" finished-at="2025-07-17T17:42:30 IST" duration-ms="7561" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T18:08:57 IST" name="setUp" finished-at="2025-07-17T18:09:07 IST" duration-ms="10003" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[User enter ID in Username field]]>
@@ -46,7 +46,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testTIDInActionCardSummarypage(java.lang.String)[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T17:42:30 IST" name="testTIDInActionCardSummarypage" data-provider="cardNames" finished-at="2025-07-17T17:42:37 IST" duration-ms="7112" status="PASS">
+        <test-method signature="testTIDInActionCardSummarypage(java.lang.String)[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T18:09:07 IST" name="testTIDInActionCardSummarypage" data-provider="cardNames" finished-at="2025-07-17T18:09:22 IST" duration-ms="15269" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,7 +66,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- testTIDInActionCardSummarypage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T17:42:37 IST" name="tearDown" finished-at="2025-07-17T17:42:37 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.report.test.transaction@3b74ac8]" started-at="2025-07-17T18:09:22 IST" name="tearDown" finished-at="2025-07-17T18:09:22 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

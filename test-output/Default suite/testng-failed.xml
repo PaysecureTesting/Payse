@@ -7,8 +7,8 @@
         <methods>
           <include name="loadConfig"/>
           <include name="setUp"/>
-          <include name="testClickFirstValid_TransactionOnCardOage"/>
           <include name="tearDown"/>
+          <include name="testTIDInActionCardSummarypage" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.report.test.transaction -->

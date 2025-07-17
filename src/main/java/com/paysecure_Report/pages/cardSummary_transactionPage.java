@@ -17,6 +17,7 @@ import com.paysecure.actiondriver.ActionDriver;
 public class cardSummary_transactionPage {
 
 	public String clickedTxnId ="";
+	public String merchantName ="";
 	public static String clickedTxn___Id ="";
 
 	// navigate upto Bank Transaction Time Report
@@ -28,6 +29,7 @@ public class cardSummary_transactionPage {
 
 	private By TID = By.xpath("//h5[@id='purchaseInfo']");
 	private By lastAction_ID=By.xpath("//span[@id='lAhistory']");
+	private By mer_Name=By.xpath("//tbody[@id='lastActionList']/descendant::tr[2]/td[2]");
 
 	// cancel button - transaction --card summary page
 	private By cancelButton = By.xpath("//h5[@id='purchaseInfo']/following-sibling::button");
@@ -181,7 +183,7 @@ public class cardSummary_transactionPage {
 
 	 // Global to compare later
 
-	public void clickOnActionColumn(WebDriver driver) {
+	public void clickOnActionColumn(WebDriver driver) throws InterruptedException {
 	    WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(15));
 	    boolean actionClicked = false;
 
@@ -195,6 +197,8 @@ public class cardSummary_transactionPage {
 	        if (!statusText.equalsIgnoreCase("EXPIRED")) {
 	            // ✅ Get Purchase ID from 3rd column of current row
 	        	clickedTxnId = r.findElement(By.xpath("./td[3]")).getText().trim();
+	        	Thread.sleep(1500);
+	        	merchantName=r.findElement(By.xpath("./td[4]")).getText().trim();
 	            System.out.println("✅ Found Purchase ID: " +clickedTxnId);
 
 	            // ✅ Click Action button from same row
@@ -224,6 +228,19 @@ public class cardSummary_transactionPage {
 		System.out.println("p_ID:-"+p_ID);
 		
 		Assert.assertEquals(clickedTxnId,p_ID, "If Both purchase ID is not matching then our TC is Failed");
+
+	}
+	
+	public void verifymercahntNameOnActionPage() {
+
+		
+		
+		String p= actionDriver.getText(mer_Name);
+	//	String p_ID= p.split(":")[1].trim();
+		
+		System.out.println("p_ID:-"+p);
+		
+		Assert.assertEquals(merchantName,p, "If Both purchase ID is not matching then our TC is Failed");
 
 	}
 	
