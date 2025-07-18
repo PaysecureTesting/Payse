@@ -5,10 +5,11 @@
     <classes>
       <class name="com.report.test.transaction">
         <methods>
+          <include name="failurMethod"/>
           <include name="loadConfig"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testTIDInActionCardSummarypage" invocation-numbers="0"/>
+          <include name="verifyTransactionIDAndStatus_Paid123"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.report.test.transaction -->

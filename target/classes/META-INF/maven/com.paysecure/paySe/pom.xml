@@ -99,6 +99,11 @@
 			<version>1.18.38</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.orangeHRM</groupId>
+			<artifactId>OrangeHRMProject</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

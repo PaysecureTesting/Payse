@@ -302,7 +302,27 @@ public class transaction extends baseClass {
 		
 		
 	}
+	
+	@Test
+	public void verifyTransactionIDAndStatus_Paid() throws InterruptedException{
+		ts.filterTransactionThroughSelectStatus("Paid");
+		ts.clickOnSearchButton(getDriver());
+		ts.verifyPaidTransaction(getDriver());
+		ts.extractPurchaseIdFromSpanFormat(getDriver());
+		ts.verifyTRNIDIn_Paid();
+		
 
+	}
+	@Test
+	public void verifyTransactionIDAndStatus_Paid123() throws InterruptedException{
+		ts.filterTransactionThroughSelectStatus("Paid");
+		ts.clickOnSearchButton(getDriver());
+		ts.verifyPaidTransaction(getDriver());
+	
+		ts.getJsonSpanValue(getDriver());
+		ts.verifyStatus_Paid(getDriver());
+
+	}
 
 	// payment flow
 	// mid

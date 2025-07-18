@@ -12,17 +12,17 @@ public class DataProviders {
 	@DataProvider(name = "cardNames")
 	public Object[][] getCardNames() {
 		return new Object[][] {
-//			{ "MOBILEMONEY" }, 
-//			{ "INTERAC" }, 
+			{ "MOBILEMONEY" }, 
+			{ "INTERAC" }, 
 		{ "PIX" },
-//			{ "50785078******7812" }, 
-//			{ "PAYID" },
-//				{ "40840840****4081" }, 
-//				{ "VIRTUAL-ACCOUNT" }, 
-//				{"42639826****9299"},
-//				{"INTERAC-REQUEST-MONEY"},
-//				{"SPEI-CLABE"},
-//				{"42424242****4242"},
+			{ "50785078******7812" }, 
+			{ "PAYID" },
+				{ "40840840****4081" }, 
+				{ "VIRTUAL-ACCOUNT" }, 
+				{"42639826****9299"},
+				{"INTERAC-REQUEST-MONEY"},
+				{"SPEI-CLABE"},
+				{"42424242****4242"},
 				};
 	}
 

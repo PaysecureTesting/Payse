@@ -1,13 +1,19 @@
 package com.paysecure.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,7 +21,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
@@ -160,7 +168,7 @@ public class baseClass {
 		}
 	}
 
-	@AfterMethod
+	@AfterSuite
 	public synchronized void tearDown() {
 		if (getDriver() != null) {
 			try {
@@ -219,5 +227,18 @@ public class baseClass {
 	public void staticWait(int seconds) {
 		LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(seconds));
 	}
+	
+	@AfterMethod
+	public void failurMethod(ITestResult result) {
+		if (ITestResult.FAILURE == result.getStatus()) {
+			try {
+				TakesScreenshot screenshot = (TakesScreenshot) driver;
+				File src = screenshot.getScreenshotAs(OutputType.FILE);
+				String timestamp = new SimpleDateFormat("yyyy-dd--hh-mm").format(new Date());
+				FileUtils.copyFile(src, new File(".\\screenshot\\" + " " + timestamp + ".png"));
+			} catch (Exception e) {
+				System.out.println("Exception while taking screenshot " + e.getMessage());
+			}
+		}}
 
 }

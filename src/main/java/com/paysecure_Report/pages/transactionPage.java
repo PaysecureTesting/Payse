@@ -7,11 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -928,15 +931,106 @@ public class transactionPage {
 	    }
 	}
 	
+	public static String Trn___Id ="";
+	public static String transactionStatus = "";
+	private By paid = By.xpath("(//a[text()='PAID'])[1]");
+	private By t_ID = By.xpath("(//div[@id='viewRisk1']/descendant::span[@class='json-string'])[1]");
+	private By TRN_Status=By.xpath("(//div[@id='viewRisk1']/descendant::span[@class='json-string'])[3]");
+	public void verifyPaidTransaction(WebDriver driver) {
 
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(15));
+		boolean actionClicked = false;
+
+		List<WebElement> rows = w.until(
+				ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//tbody[@id='filterTransStats']/tr")));
+
+		for (WebElement r : rows) {
+			// ✅ Get Last Status from the 10th column (relative to current row)
+			String statusText = r.findElement(By.xpath("./td[11]")).getText().trim();
+
+			if (statusText.equalsIgnoreCase("PAID")) {
+				// ✅ Get Purchase ID from 3rd column (Transaction ID)
+				Trn___Id= r.findElement(By.xpath("./td[4]")).getText().trim();
+				System.out.println("✅ Found Trn___Id:    " +   Trn___Id);
+
+				transactionStatus = r.findElement(By.xpath("./td[11]")).getText().trim();
+				System.out.println("✅ Found transaction Status:- " + transactionStatus);
+
+				// ✅ Click History button (assuming 2nd button in 1st column)
+				
+				System.out.println("🛠 Clicking History button for clickedTxn___ID: " + Trn___Id);
+				actionDriver.click(paid);
+				Reporter.log("User Click on Paid", true);
+
+				actionClicked = true;
+				break;
+			}
+		}
+
+	}
+
+	public static String purchaseId;
+	public String extractPurchaseIdFromSpanFormat(WebDriver driver) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement pre = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("pre")));
+
+	    List<WebElement> keys = pre.findElements(By.cssSelector("span.json-key"));
+
+	    for (WebElement key : keys) {
+	        if (key.getText().trim().equals("purchaseId")) {
+	            WebElement purchaseIdSpan = key.findElement(By.xpath("following-sibling::span[@class='json-string'][1]"));
+	            purchaseId = purchaseIdSpan.getText().replaceAll("\"", "").trim();
+	            System.out.println("✅ Purchase ID: " + purchaseId);
+	            return purchaseId;
+	        }
+	    }
+	    return "Not found";
+	}
 	
 	
+	public static String jsonTransactionStatus;
+	String keyName ="transactionStatus";
+
+	public String getJsonSpanValue(WebDriver driver) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement preElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("pre")));
+	    List<WebElement> keys = preElement.findElements(By.cssSelector("span.json-key"));
+
+	    for (WebElement key : keys) {
+	        if (key.getText().trim().equals(keyName)) {
+	            try {
+	                WebElement valueSpan = key.findElement(By.xpath("following-sibling::span[@class='json-string'][1]"));
+	                return valueSpan.getText().replaceAll("\"", "").trim();
+	            } catch (Exception e) {
+	                System.out.println("❌ Could not find value for key: " +keyName);
+	                return "Not found";
+	            }
+	        }
+	    }
+
+	    System.out.println("❌ Key not found: " +keyName);
+	    return "Not found";
+	}
+
+	public static String jsonTransactionStatus1;
+	public void verifyStatus_Paid(WebDriver driver) {
+	    jsonTransactionStatus = getJsonSpanValue(driver);
+
+	    System.out.println("🔍 Expected: " + transactionStatus);
+	    System.out.println("🔍 Actual from JSON: " + jsonTransactionStatus);
+
+	    Assert.assertEquals(jsonTransactionStatus.toLowerCase(), transactionStatus, "Mismatch in transaction status");
+	}
+	
+	public void verifyTRNIDIn_Paid() {
+		
+		Assert.assertEquals(Trn___Id,purchaseId, "Mismatch in transaction ID");
+	
+
+	}
 	
 	
-	
-	
-	
-	
+
 	
 }
 
