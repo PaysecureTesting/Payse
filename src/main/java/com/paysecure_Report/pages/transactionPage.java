@@ -571,9 +571,7 @@ public class transactionPage {
 		wait.until(ExpectedConditions.visibilityOf(USERTYPE));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='usertype-select']"))); // Replace
 																												// with
-																												// actual
-																												// locator
-																												// if
+																									// if
 																												// needed
 
 		// Wrap the dropdown
